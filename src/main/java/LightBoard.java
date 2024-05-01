@@ -11,11 +11,15 @@ public class LightBoard
   public LightBoard(int numRows, int numCols)
   {
     /* to be implemented in part (a) */
-for(int i = 0; i< numRows; i++){
-  for(int j = 0; j< numCols; j++){
-    
+lights = new boolean [numRows][numCols];
+for(int r = 0; r<numRows; r++){
+  for(int c = 0; c<numCols; c++){
+    //for(int r = 0; r<lights.length; r++){
+  //for(int c = 0; c<lights[0].length; c++){
+    double balrog = Math.random();
+    lights[r][c] = balrog <0.4;
   }
-  }
+}
 
   /** Evaluates a light in row index row and column index col and returns a status
    *  as described in part (b).
@@ -24,8 +28,21 @@ for(int i = 0; i< numRows; i++){
   public boolean evaluateLight(int row, int col)
   {
     /* to be implemented in part (b) */
-   
- 
+   int moonlight = 0;
+    for(int i = 0; i<lights.length; i++)
+      {
+        if(lights[r][col])
+        {
+          moonlight++;
+        }
+    if(lights[row][col] && moonlight % 2 == 0)
+    {
+      return false;
+    }
+    if(lights[row][col] && moonlight % 3 == 0){
+    return true;
+    }
+ return lights[row][col];
   }
   public boolean[][] getLights()
   {

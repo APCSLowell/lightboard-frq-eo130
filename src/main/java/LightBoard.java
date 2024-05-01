@@ -42,7 +42,7 @@ for(int r = 0; r<numRows; r++){
     if(lights[row][col] && moonlight % 3 == 0){
     return true;
     }
- return lights[row][col];
+// return lights[row][col];
   }
   public boolean[][] getLights()
   {
